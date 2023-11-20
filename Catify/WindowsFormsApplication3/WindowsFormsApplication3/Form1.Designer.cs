@@ -28,8 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Ventana = new System.Windows.Forms.Button();
+            this.TrackbarCancion = new XComponent.SliderBar.MACTrackBar();
+            this.txtboxNombreCancion = new System.Windows.Forms.TextBox();
+            this.txtboxCancion2 = new System.Windows.Forms.TextBox();
+            this.txtboxCancion1 = new System.Windows.Forms.TextBox();
+            this.TrackBarVolumen = new XComponent.SliderBar.MACTrackBar();
+            this.ReproductorMusica = new AxWMPLib.AxWindowsMediaPlayer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelNombreCancion = new System.Windows.Forms.Label();
+            this.labelArtistaCancion = new System.Windows.Forms.Label();
+            this.labelAlbumCancion = new System.Windows.Forms.Label();
+            this.labelGeneroCancion = new System.Windows.Forms.Label();
+            this.labelAnyoCancion = new System.Windows.Forms.Label();
+            this.portadaCancion = new System.Windows.Forms.PictureBox();
             this.btnAleatorio = new System.Windows.Forms.Button();
             this.BtnRepetir = new System.Windows.Forms.Button();
             this.PlaylistIcono = new System.Windows.Forms.PictureBox();
@@ -39,7 +53,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PlayAnterior = new System.Windows.Forms.Button();
             this.PlaySiguiente = new System.Windows.Forms.Button();
             this.playbutton = new System.Windows.Forms.Button();
@@ -47,11 +60,9 @@
             this.trespuntos = new System.Windows.Forms.Button();
             this.CerrarVentana = new System.Windows.Forms.Button();
             this.MinimizarVentana = new System.Windows.Forms.Button();
-            this.TrackbarCancion = new XComponent.SliderBar.MACTrackBar();
-            this.txtboxNombreCancion = new System.Windows.Forms.TextBox();
-            this.txtboxCancion2 = new System.Windows.Forms.TextBox();
-            this.txtboxCancion1 = new System.Windows.Forms.TextBox();
-            this.TrackBarVolumen = new XComponent.SliderBar.MACTrackBar();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductorMusica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portadaCancion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlaylistIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancionIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -59,8 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlReproductor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Ventana
@@ -76,6 +87,179 @@
             this.Ventana.TabIndex = 0;
             this.Ventana.UseVisualStyleBackColor = false;
             this.Ventana.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TrackbarCancion
+            // 
+            this.TrackbarCancion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.TrackbarCancion.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.TrackbarCancion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrackbarCancion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.TrackbarCancion.IndentHeight = 6;
+            this.TrackbarCancion.Location = new System.Drawing.Point(166, 478);
+            this.TrackbarCancion.Maximum = 10;
+            this.TrackbarCancion.Minimum = 0;
+            this.TrackbarCancion.Name = "TrackbarCancion";
+            this.TrackbarCancion.Size = new System.Drawing.Size(323, 25);
+            this.TrackbarCancion.TabIndex = 19;
+            this.TrackbarCancion.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackbarCancion.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.TrackbarCancion.TickHeight = 4;
+            this.TrackbarCancion.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackbarCancion.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.TrackbarCancion.TrackerSize = new System.Drawing.Size(13, 13);
+            this.TrackbarCancion.TrackLineColor = System.Drawing.Color.DimGray;
+            this.TrackbarCancion.TrackLineHeight = 3;
+            this.TrackbarCancion.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(39)))), ((int)(((byte)(117)))));
+            this.TrackbarCancion.Value = 0;
+            // 
+            // txtboxNombreCancion
+            // 
+            this.txtboxNombreCancion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.txtboxNombreCancion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxNombreCancion.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtboxNombreCancion.Location = new System.Drawing.Point(26, 429);
+            this.txtboxNombreCancion.Multiline = true;
+            this.txtboxNombreCancion.Name = "txtboxNombreCancion";
+            this.txtboxNombreCancion.Size = new System.Drawing.Size(134, 31);
+            this.txtboxNombreCancion.TabIndex = 20;
+            this.txtboxNombreCancion.Text = "aqui puede ir boton de añadir a playlist";
+            // 
+            // txtboxCancion2
+            // 
+            this.txtboxCancion2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.txtboxCancion2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxCancion2.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtboxCancion2.Location = new System.Drawing.Point(491, 483);
+            this.txtboxCancion2.Multiline = true;
+            this.txtboxCancion2.Name = "txtboxCancion2";
+            this.txtboxCancion2.Size = new System.Drawing.Size(31, 20);
+            this.txtboxCancion2.TabIndex = 21;
+            this.txtboxCancion2.Text = "--:--";
+            this.txtboxCancion2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // txtboxCancion1
+            // 
+            this.txtboxCancion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.txtboxCancion1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxCancion1.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtboxCancion1.Location = new System.Drawing.Point(144, 483);
+            this.txtboxCancion1.Multiline = true;
+            this.txtboxCancion1.Name = "txtboxCancion1";
+            this.txtboxCancion1.Size = new System.Drawing.Size(34, 20);
+            this.txtboxCancion1.TabIndex = 22;
+            this.txtboxCancion1.Text = "--:--";
+            // 
+            // TrackBarVolumen
+            // 
+            this.TrackBarVolumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.TrackBarVolumen.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.TrackBarVolumen.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrackBarVolumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.TrackBarVolumen.IndentHeight = 6;
+            this.TrackBarVolumen.Location = new System.Drawing.Point(506, 446);
+            this.TrackBarVolumen.Maximum = 100;
+            this.TrackBarVolumen.Minimum = 0;
+            this.TrackBarVolumen.Name = "TrackBarVolumen";
+            this.TrackBarVolumen.Size = new System.Drawing.Size(114, 22);
+            this.TrackBarVolumen.TabIndex = 23;
+            this.TrackBarVolumen.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBarVolumen.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.TrackBarVolumen.TickHeight = 4;
+            this.TrackBarVolumen.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.TrackBarVolumen.TrackerColor = System.Drawing.Color.LemonChiffon;
+            this.TrackBarVolumen.TrackerSize = new System.Drawing.Size(10, 10);
+            this.TrackBarVolumen.TrackLineColor = System.Drawing.Color.DimGray;
+            this.TrackBarVolumen.TrackLineHeight = 3;
+            this.TrackBarVolumen.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TrackBarVolumen.Value = 50;
+            this.TrackBarVolumen.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.TrackBarVolumen_ValueChanged);
+            // 
+            // ReproductorMusica
+            // 
+            this.ReproductorMusica.Enabled = true;
+            this.ReproductorMusica.Location = new System.Drawing.Point(41, 293);
+            this.ReproductorMusica.Name = "ReproductorMusica";
+            this.ReproductorMusica.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("ReproductorMusica.OcxState")));
+            this.ReproductorMusica.Size = new System.Drawing.Size(200, 135);
+            this.ReproductorMusica.TabIndex = 24;
+            this.ReproductorMusica.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.ReproductorMusica_PlayStateChange);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // labelNombreCancion
+            // 
+            this.labelNombreCancion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(39)))), ((int)(((byte)(117)))));
+            this.labelNombreCancion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombreCancion.ForeColor = System.Drawing.Color.White;
+            this.labelNombreCancion.Location = new System.Drawing.Point(268, 67);
+            this.labelNombreCancion.Name = "labelNombreCancion";
+            this.labelNombreCancion.Size = new System.Drawing.Size(352, 73);
+            this.labelNombreCancion.TabIndex = 26;
+            this.labelNombreCancion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelNombreCancion.Visible = false;
+            // 
+            // labelArtistaCancion
+            // 
+            this.labelArtistaCancion.BackColor = System.Drawing.Color.Black;
+            this.labelArtistaCancion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelArtistaCancion.ForeColor = System.Drawing.Color.White;
+            this.labelArtistaCancion.Location = new System.Drawing.Point(269, 192);
+            this.labelArtistaCancion.Name = "labelArtistaCancion";
+            this.labelArtistaCancion.Size = new System.Drawing.Size(352, 40);
+            this.labelArtistaCancion.TabIndex = 27;
+            this.labelArtistaCancion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelArtistaCancion.Visible = false;
+            // 
+            // labelAlbumCancion
+            // 
+            this.labelAlbumCancion.BackColor = System.Drawing.Color.Black;
+            this.labelAlbumCancion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlbumCancion.ForeColor = System.Drawing.Color.White;
+            this.labelAlbumCancion.Location = new System.Drawing.Point(272, 261);
+            this.labelAlbumCancion.Name = "labelAlbumCancion";
+            this.labelAlbumCancion.Size = new System.Drawing.Size(347, 62);
+            this.labelAlbumCancion.TabIndex = 28;
+            this.labelAlbumCancion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAlbumCancion.Visible = false;
+            // 
+            // labelGeneroCancion
+            // 
+            this.labelGeneroCancion.BackColor = System.Drawing.Color.Black;
+            this.labelGeneroCancion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGeneroCancion.ForeColor = System.Drawing.Color.White;
+            this.labelGeneroCancion.Location = new System.Drawing.Point(272, 323);
+            this.labelGeneroCancion.Name = "labelGeneroCancion";
+            this.labelGeneroCancion.Size = new System.Drawing.Size(347, 30);
+            this.labelGeneroCancion.TabIndex = 29;
+            this.labelGeneroCancion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelGeneroCancion.Visible = false;
+            // 
+            // labelAnyoCancion
+            // 
+            this.labelAnyoCancion.BackColor = System.Drawing.Color.Black;
+            this.labelAnyoCancion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnyoCancion.ForeColor = System.Drawing.Color.White;
+            this.labelAnyoCancion.Location = new System.Drawing.Point(272, 353);
+            this.labelAnyoCancion.Name = "labelAnyoCancion";
+            this.labelAnyoCancion.Size = new System.Drawing.Size(347, 30);
+            this.labelAnyoCancion.TabIndex = 30;
+            this.labelAnyoCancion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAnyoCancion.Visible = false;
+            // 
+            // portadaCancion
+            // 
+            this.portadaCancion.BackColor = System.Drawing.Color.Transparent;
+            this.portadaCancion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.portadaCancion.Location = new System.Drawing.Point(41, 67);
+            this.portadaCancion.Name = "portadaCancion";
+            this.portadaCancion.Size = new System.Drawing.Size(200, 200);
+            this.portadaCancion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.portadaCancion.TabIndex = 25;
+            this.portadaCancion.TabStop = false;
+            this.portadaCancion.Visible = false;
             // 
             // btnAleatorio
             // 
@@ -192,17 +376,6 @@
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::WindowsFormsApplication3.Properties.Resources.panel1;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 35);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(658, 378);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // PlayAnterior
             // 
             this.PlayAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -263,9 +436,9 @@
             // 
             this.pnlReproductor.BackColor = System.Drawing.Color.Transparent;
             this.pnlReproductor.Image = global::WindowsFormsApplication3.Properties.Resources.barrareproductor2;
-            this.pnlReproductor.Location = new System.Drawing.Point(17, 413);
+            this.pnlReproductor.Location = new System.Drawing.Point(4, 414);
             this.pnlReproductor.Name = "pnlReproductor";
-            this.pnlReproductor.Size = new System.Drawing.Size(640, 96);
+            this.pnlReproductor.Size = new System.Drawing.Size(650, 96);
             this.pnlReproductor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pnlReproductor.TabIndex = 5;
             this.pnlReproductor.TabStop = false;
@@ -318,90 +491,16 @@
             this.MinimizarVentana.UseVisualStyleBackColor = true;
             this.MinimizarVentana.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // TrackbarCancion
+            // pictureBox2
             // 
-            this.TrackbarCancion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.TrackbarCancion.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.TrackbarCancion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TrackbarCancion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
-            this.TrackbarCancion.IndentHeight = 6;
-            this.TrackbarCancion.Location = new System.Drawing.Point(166, 476);
-            this.TrackbarCancion.Maximum = 10;
-            this.TrackbarCancion.Minimum = 0;
-            this.TrackbarCancion.Name = "TrackbarCancion";
-            this.TrackbarCancion.Size = new System.Drawing.Size(323, 25);
-            this.TrackbarCancion.TabIndex = 19;
-            this.TrackbarCancion.TextTickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackbarCancion.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
-            this.TrackbarCancion.TickHeight = 4;
-            this.TrackbarCancion.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackbarCancion.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.TrackbarCancion.TrackerSize = new System.Drawing.Size(13, 13);
-            this.TrackbarCancion.TrackLineColor = System.Drawing.Color.DimGray;
-            this.TrackbarCancion.TrackLineHeight = 3;
-            this.TrackbarCancion.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(39)))), ((int)(((byte)(117)))));
-            this.TrackbarCancion.Value = 5;
-            // 
-            // txtboxNombreCancion
-            // 
-            this.txtboxNombreCancion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.txtboxNombreCancion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtboxNombreCancion.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtboxNombreCancion.Location = new System.Drawing.Point(31, 429);
-            this.txtboxNombreCancion.Multiline = true;
-            this.txtboxNombreCancion.Name = "txtboxNombreCancion";
-            this.txtboxNombreCancion.Size = new System.Drawing.Size(134, 31);
-            this.txtboxNombreCancion.TabIndex = 20;
-            this.txtboxNombreCancion.Text = "asdasdasdsdasdasdasdadasdasdasdasdasd";
-            // 
-            // txtboxCancion2
-            // 
-            this.txtboxCancion2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.txtboxCancion2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtboxCancion2.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtboxCancion2.Location = new System.Drawing.Point(487, 484);
-            this.txtboxCancion2.Multiline = true;
-            this.txtboxCancion2.Name = "txtboxCancion2";
-            this.txtboxCancion2.Size = new System.Drawing.Size(22, 17);
-            this.txtboxCancion2.TabIndex = 21;
-            this.txtboxCancion2.Text = "--:--";
-            this.txtboxCancion2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // txtboxCancion1
-            // 
-            this.txtboxCancion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.txtboxCancion1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtboxCancion1.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtboxCancion1.Location = new System.Drawing.Point(146, 484);
-            this.txtboxCancion1.Multiline = true;
-            this.txtboxCancion1.Name = "txtboxCancion1";
-            this.txtboxCancion1.Size = new System.Drawing.Size(17, 21);
-            this.txtboxCancion1.TabIndex = 22;
-            this.txtboxCancion1.Text = "--:--";
-            // 
-            // TrackBarVolumen
-            // 
-            this.TrackBarVolumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.TrackBarVolumen.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.TrackBarVolumen.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TrackBarVolumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
-            this.TrackBarVolumen.IndentHeight = 6;
-            this.TrackBarVolumen.Location = new System.Drawing.Point(543, 444);
-            this.TrackBarVolumen.Maximum = 10;
-            this.TrackBarVolumen.Minimum = 0;
-            this.TrackBarVolumen.Name = "TrackBarVolumen";
-            this.TrackBarVolumen.Size = new System.Drawing.Size(102, 22);
-            this.TrackBarVolumen.TabIndex = 23;
-            this.TrackBarVolumen.TextTickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackBarVolumen.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
-            this.TrackBarVolumen.TickHeight = 4;
-            this.TrackBarVolumen.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.TrackBarVolumen.TrackerColor = System.Drawing.Color.LemonChiffon;
-            this.TrackBarVolumen.TrackerSize = new System.Drawing.Size(10, 10);
-            this.TrackBarVolumen.TrackLineColor = System.Drawing.Color.DimGray;
-            this.TrackBarVolumen.TrackLineHeight = 3;
-            this.TrackBarVolumen.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TrackBarVolumen.Value = 5;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::WindowsFormsApplication3.Properties.Resources.panel1;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 35);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(658, 378);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -409,10 +508,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(751, 512);
+            this.Controls.Add(this.txtboxNombreCancion);
+            this.Controls.Add(this.labelAnyoCancion);
+            this.Controls.Add(this.labelGeneroCancion);
+            this.Controls.Add(this.labelAlbumCancion);
+            this.Controls.Add(this.labelArtistaCancion);
+            this.Controls.Add(this.labelNombreCancion);
+            this.Controls.Add(this.portadaCancion);
             this.Controls.Add(this.TrackBarVolumen);
             this.Controls.Add(this.txtboxCancion1);
             this.Controls.Add(this.txtboxCancion2);
-            this.Controls.Add(this.txtboxNombreCancion);
             this.Controls.Add(this.TrackbarCancion);
             this.Controls.Add(this.btnAleatorio);
             this.Controls.Add(this.BtnRepetir);
@@ -423,7 +528,6 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.PlayAnterior);
             this.Controls.Add(this.PlaySiguiente);
             this.Controls.Add(this.playbutton);
@@ -432,12 +536,16 @@
             this.Controls.Add(this.CerrarVentana);
             this.Controls.Add(this.MinimizarVentana);
             this.Controls.Add(this.Ventana);
+            this.Controls.Add(this.ReproductorMusica);
+            this.Controls.Add(this.pictureBox2);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Catify";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductorMusica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portadaCancion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlaylistIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancionIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -445,8 +553,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlReproductor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,6 +585,14 @@
         private System.Windows.Forms.TextBox txtboxCancion2;
         private System.Windows.Forms.TextBox txtboxCancion1;
         private XComponent.SliderBar.MACTrackBar TrackBarVolumen;
+        private AxWMPLib.AxWindowsMediaPlayer ReproductorMusica;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox portadaCancion;
+        private System.Windows.Forms.Label labelNombreCancion;
+        private System.Windows.Forms.Label labelArtistaCancion;
+        private System.Windows.Forms.Label labelAlbumCancion;
+        private System.Windows.Forms.Label labelGeneroCancion;
+        private System.Windows.Forms.Label labelAnyoCancion;
     }
 }
 

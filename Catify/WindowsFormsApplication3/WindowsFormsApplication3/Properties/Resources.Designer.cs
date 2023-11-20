@@ -221,6 +221,16 @@ namespace WindowsFormsApplication3.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg {
+            get {
+                object obj = ResourceManager.GetObject("bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
         internal static byte[] Cancion1 {
@@ -286,6 +296,16 @@ namespace WindowsFormsApplication3.Properties {
         internal static System.Drawing.Bitmap nextsong1 {
             get {
                 object obj = ResourceManager.GetObject("nextsong1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nobg {
+            get {
+                object obj = ResourceManager.GetObject("nobg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

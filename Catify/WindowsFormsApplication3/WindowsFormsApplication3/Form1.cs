@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using NAudio.Wave;
 using System.IO;
+using TagLib;
 namespace WindowsFormsApplication3
 {
     public partial class Form1 : Form
@@ -28,6 +29,10 @@ namespace WindowsFormsApplication3
     private Point originalLocationIcono2;
     private bool isPlaying = false;
     //botones atras y siguiente
+
+
+    int minutoRestante, segundoRestante, minutoActual, segundoActual;
+    String minutoRestanteStr, segundoRestanteStr, minutoActualStr, segundoActualStr, dirCancion;
     
         
     //funcionalidad NAudio    
@@ -62,6 +67,9 @@ namespace WindowsFormsApplication3
             originalLocationIcono1 = PlaylistIcono.Location;
             originalSizeIcono2 = playbutton.Size;
             originalLocationIcono2 = playbutton.Location;
+
+            //ocultar reproductor
+            ReproductorMusica.Visible = false;
 
 
             this.Load += (sender, e) =>
@@ -186,11 +194,13 @@ namespace WindowsFormsApplication3
         {
             if (isPlaying)
             {
+                ReproductorMusica.Ctlcontrols.pause();
                 // Cambia a la imagen "play"
                 playbutton.BackgroundImage = Properties.Resources.playbutton_on;
             }
             else
             {
+                ReproductorMusica.Ctlcontrols.play();
                 // Cambia a la imagen "pause"
                 playbutton.BackgroundImage = Properties.Resources.playbutton_off;
             }
@@ -214,7 +224,142 @@ namespace WindowsFormsApplication3
 
         private void CancionIcono_Click(object sender, EventArgs e)
         {
-            
+            OpenFileDialog abridorArchivo = new OpenFileDialog();
+            if (abridorArchivo.ShowDialog() == DialogResult.OK)
+            {
+                dirCancion = abridorArchivo.FileName;
+                ReproductorMusica.URL = dirCancion;
+                ReproductorMusica.Visible = true;
+                ReproductorMusica.uiMode = "none";
+                metadatos();
+                timer1.Start();
+                playbutton.BackgroundImage = Properties.Resources.playbutton_off;
+                isPlaying = !isPlaying;
+            }
+        }
+
+        private void metadatos()
+        {
+            labelNombreCancion.Visible = true;
+            labelArtistaCancion.Visible = true;
+            labelAlbumCancion.Visible = true;
+            labelGeneroCancion.Visible = true;
+            labelAnyoCancion.Visible = true;
+            portadaCancion.Visible = true;
+
+            TagLib.File archivoActual = TagLib.File.Create(dirCancion);
+            labelNombreCancion.Text = archivoActual.Tag.Title;
+            labelArtistaCancion.Text = archivoActual.Tag.FirstAlbumArtist;
+            labelAlbumCancion.Text = archivoActual.Tag.Album;
+            labelGeneroCancion.Text = archivoActual.Tag.FirstGenre;
+            labelAnyoCancion.Text = Convert.ToString(archivoActual.Tag.Year);
+
+            var picture = archivoActual.Tag.Pictures.FirstOrDefault();
+
+            if (picture != null)
+            {
+                portadaCancion.Image = new Bitmap(new MemoryStream(picture.Data.Data));
+            }
+            else
+            {
+                portadaCancion.Image = Properties.Resources.nobg;
+            }
+        }
+
+        private void TrackBarVolumen_ValueChanged(object sender, decimal value)
+        {
+            ReproductorMusica.settings.volume = TrackBarVolumen.Value;
+        }
+
+        //private void TrackbarCancion_ValueChanged(object sender, decimal value)
+        //{
+        //    ReproductorMusica.Ctlcontrols.currentPosition = TrackbarCancion.Value;
+        //}
+
+        private void mostrarTiempos()
+        {
+            minutoRestante = ((int)ReproductorMusica.Ctlcontrols.currentItem.duration - ((int)TrackbarCancion.Value)) / 60;
+            segundoRestante = ((int)ReproductorMusica.Ctlcontrols.currentItem.duration - ((int)TrackbarCancion.Value)) % 60;
+            if (minutoRestante < 10)
+            {
+                minutoRestanteStr = "0" + Convert.ToString(minutoRestante);
+            }
+            else
+            {
+                minutoRestanteStr = Convert.ToString(minutoRestante);
+            }
+            if (segundoRestante < 10)
+            {
+                segundoRestanteStr = "0" + Convert.ToString(segundoRestante);
+            }
+            else
+            {
+                segundoRestanteStr = Convert.ToString(segundoRestante);
+            }
+
+            minutoActual = (((int)TrackbarCancion.Value)) / 60;
+            segundoActual = (((int)TrackbarCancion.Value)) % 60;
+            if (minutoActual < 10)
+            {
+                minutoActualStr = "0" + Convert.ToString(minutoActual);
+            }
+            else
+            {
+                minutoActualStr = Convert.ToString(minutoActual);
+            }
+            if (segundoActual < 10)
+            {
+                segundoActualStr = "0" + Convert.ToString(segundoActual);
+            }
+            else
+            {
+                segundoActualStr = Convert.ToString(segundoActual);
+            }
+
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ActualizarBarra();
+            mostrarTiempos();
+
+            metadatos();
+            TrackbarCancion.Value = (int)ReproductorMusica.Ctlcontrols.currentPosition;
+            txtboxCancion2.Text = minutoRestanteStr + ":" + segundoRestanteStr;
+            txtboxCancion1.Text = minutoActualStr + ":" + segundoActualStr;
+        }
+
+        private void ActualizarBarra()
+        {
+            if (ReproductorMusica.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                if (!timer1.Enabled)
+                {
+                    timer1.Start();
+                }
+                TrackbarCancion.Maximum = (int)ReproductorMusica.Ctlcontrols.currentItem.duration;
+            }
+            else if (ReproductorMusica.playState == WMPLib.WMPPlayState.wmppsPaused)
+            {
+                timer1.Stop();
+            }
+            else if (ReproductorMusica.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                timer1.Stop();
+                labelNombreCancion.Visible = false;
+                labelArtistaCancion.Visible = false;
+                labelAlbumCancion.Visible = false;
+                labelGeneroCancion.Visible = false;
+                labelAnyoCancion.Visible = false;
+                portadaCancion.Visible = false;
+                playbutton.BackgroundImage = Properties.Resources.playbutton_on;
+                isPlaying = !isPlaying;
+                TrackbarCancion.Value = 0;
+            }
+        }
+
+        private void ReproductorMusica_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            ActualizarBarra();
         }
         //
 

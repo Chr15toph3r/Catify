@@ -1,3 +1,35 @@
 C:\Users\Christopher Avila\OneDrive\Documents\Visual Studio 2012\Projects\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe.config
 C:\Users\Christopher Avila\OneDrive\Documents\Visual Studio 2012\Projects\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.exe
 C:\Users\Christopher Avila\OneDrive\Documents\Visual Studio 2012\Projects\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.pdb
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe.config
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.exe
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.pdb
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.pdb
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\NAudio.xml
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Catify.csprojResolveAssemblyReference.cache
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Form1.resources
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Properties.Resources.resources
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Catify.csproj.GenerateResource.Cache
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\Interop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Interop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Catify.csproj.ResolveComReference.cache
+C:\Users\toyox\Downloads\Catify-main\Catify\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\taglib-sharp.dll
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe.config
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Interop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Catify.csproj.ResolveComReference.cache
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.exe
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.pdb
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.exe
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\WindowsFormsApplication3.pdb
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\taglib-sharp.dll
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\NAudio.xml
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\Interop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Catify.csprojResolveAssemblyReference.cache
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Form1.resources
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\WindowsFormsApplication3.Properties.Resources.resources
+C:\Users\toyox\Downloads\Catify-main\Catify2\WindowsFormsApplication3\WindowsFormsApplication3\obj\Debug\Catify.csproj.GenerateResource.Cache
